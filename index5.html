@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PREMIUM WATCHES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Bona Nova SC", serif;
+    }
+
+    .watch {
+        margin-bottom: 28px;
+    }
+
+    .watch img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-container {
+        background-color: black;
+        padding: 2em;
+        color: white;
+    }
+
+    .content li {
+        list-style: none;
+        font-size: 13px;
+    }
+
+    .gtm-footer-link {
+        text-decoration: none;
+        color: white;
+    }
+
+    .gtm-footer-link:hover {
+        text-decoration: underline;
+        color: white;
+    }
+
+    .app-download {
+        width: 11em;
+    }
+
+    .title {
+        margin-left: 2em;
+        margin-bottom: 2em;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .product-card {
+        border: 1px solid #eaeaea;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .product-image {
+        position: relative;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-details {
+        padding: 15px;
+    }
+
+    .product-details .rating {
+        display: flex;
+        align-items: center;
+    }
+
+    .product-details .rating .star {
+        color: #f39c12;
+        margin-right: 5px;
+    }
+
+    .product-details .price {
+        display: flex;
+        align-items: center;
+    }
+
+    .product-details .price .old-price {
+        text-decoration: line-through;
+        margin-right: 10px;
+        color: #888;
+    }
+
+    .product-details .price .discount {
+        color: #e74c3c;
+        margin-left: auto;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwb6d5816b/images/homepage/titan-logo.svg"
+                    alt="Logo" style="width: 80%;">
+            </a>
+            <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto justify-content-end flex-grow-1 pe-3">
+                    <form class="d-flex mt-3 mt-lg-0" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index1.html">Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index3.html">Women</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index2.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Smartwatches
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-dark " href="index4.html">Shop by Feature</a></li>
+                            <li><a class="dropdown-item text-dark" href="index4.html">Shop by Brands</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-dark" href="index4.html">Shop by Color</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="premiumWatchesDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Premium Watches
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="premiumWatchesDropdown">
+                            <a class="dropdown-item text-dark" href="#Nebula">Nebula</a>
+                            <a class="dropdown-item text-dark" href="#Raga">Raga</a>
+                            <hr class="dropdown-divider">
+                            <a class="dropdown-item text-dark" href="#Edge">Edge</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="internationalBrandsDropdown"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            International Brands
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="internationalBrandsDropdown">
+                            <a class="dropdown-item text-dark" href="index6.html">Tommy Hilfiger</a>
+                            <a class="dropdown-item text-dark" href="index6.html">Kenneth Cole</a>
+                            <hr class="dropdown-divider">
+                            <a class="dropdown-item text-dark" href="index6.html">Annie Klevin</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index7.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </head>
+
+    <body>
+        <div class="watch">
+            <img
+                src="https://img.freepik.com/premium-photo/photo-sleek-fitness-watch-with-gym-setting-background_1055425-43161.jpg?w=826">
+        </div>
+        <h1 class="tw-category-carousel__heading text-center my-5" style="font-size: 2em;">NEBULA</h1>
+        <div class="container" id="Nebula">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img11.jpg" alt="Watch">
+                        </div>
+                        <div class="product-details">
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span>4.3 (304)</span>
+                            </div>
+                            <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                            <h5>Titan Neo Splash Blue Dial Quartz Multifunction</h5>
+                            <p>Men's Watch</p>
+                            <div class="price">
+                                <span class="new-price">₹ 6,395</span>
+                                <span class="old-price">₹ 7,995</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="menwatch.jpg" alt="Watch">
+                        </div>
+                        <div class="product-details">
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span>4.3 (304)</span>
+                            </div>
+                            <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                            <h5>Titan Neo Splash Quartz Multifunction Black Dial</h5>
+                            <p>Men's Watch</p>
+                            <div class="price">
+                                <span class="new-price">₹ 5,875</span>
+                                <span class="old-price">₹ 7,345</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img14.jpg" alt="Watch">
+                        </div>
+                        <div class="product-details">
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span>4.3 (304)</span>
+                            </div>
+                            <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                            <h5>Titan Neo Splash Quartz Multifunction Black Dial</h5>
+                            <p>Men's Watch</p>
+                            <div class="price">
+                                <span class="new-price">₹ 5,875</span>
+                                <span class="old-price">₹ 7,345</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Raga">
+            <h5 class="title d-none d-md-block text-center" style="font-size: 2em; margin-top: 1em;">RAGA</h5>
+        </div>
+        <div class="container" id="Raga">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="menwatch3.jpg" alt="Watch">
+                        </div>
+                        <div class="product-details">
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span>4.3 (304)</span>
+                            </div>
+                            <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                            <h5>Titan Neo Splash Blue Dial Quartz Multifunction</h5>
+                            <p>Men's Watch</p>
+                            <div class="price">
+                                <span class="new-price">₹ 6,395</span>
+                                <span class="old-price">₹ 7,995</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img7.webp" alt="Watch">
+                        </div>
+                        <div class="product-details">
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span>4.3 (304)</span>
+                            </div>
+                            <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                            <h5>Titan Neo Splash Quartz Multifunction Black Dial</h5>
+                            <p>Men's Watch</p>
+                            <div class="price">
+                                <span class="new-price">₹ 5,875</span>
+                                <span class="old-price">₹ 7,345</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="menwatch1.jpg" alt="Watch">
+                        </div>
+                        <div class="product-details">
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span>4.3 (304)</span>
+                            </div>
+                            <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                            <h5>Titan Neo Splash Quartz Multifunction Black Dial</h5>
+                            <p>Men's Watch</p>
+                            <div class="price">
+                                <span class="new-price">₹ 5,875</span>
+                                <span class="old-price">₹ 7,345</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Edge">
+            <h5 class="title d-none d-md-block text-center" style="font-size: 2em; margin-top: 1em;">EDGE</h5>
+        </div>
+        <div class="container" id="Edge">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="menwatch2.jpg" alt="Watch">
+                        </div>
+                        <div class="product-details">
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span>4.3 (304)</span>
+                            </div>
+                            <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                            <h5>Titan Neo Splash Blue Dial Quartz Multifunction</h5>
+                            <p>Men's Watch</p>
+                            <div class="price">
+                                <span class="new-price">₹ 6,395</span>
+                                <span class="old-price">₹ 7,995</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="menwatch3.jpg" alt="Watch">
+                        </div>
+                        <div class="product-details">
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span>4.3 (304)</span>
+                            </div>
+                            <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                            <h5>Titan Neo Splash Quartz Multifunction Black Dial</h5>
+                            <p>Men's Watch</p>
+                            <div class="price">
+                                <span class="new-price">₹ 5,875</span>
+                                <span class="old-price">₹ 7,345</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="menwatch4.jpg" alt="Watch">
+                        </div>
+                        <div class="product-details">
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span>4.3 (304)</span>
+                            </div>
+                            <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                            <h5>Titan Neo Splash Quartz Multifunction Black Dial</h5>
+                            <p>Men's Watch</p>
+                            <div class="price">
+                                <span class="new-price">₹ 5,875</span>
+                                <span class="old-price">₹ 7,345</span>
+                                <span class="discount">20% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-container row m-0">
+            <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md">
+                <div class="content-asset">
+                    <div>
+                        <h5 class="title d-none d-md-block">COLLECTIONS</h5>
+                    </div>
+                    <ul class="content" id="collapsible-product">
+                        <li><a class="gtm-footer-link" href="#">Titan Automatics</a></li>
+                        <li><a class="gtm-footer-link" href="#">Police Batman</a></li>
+                        <li><a class="gtm-footer-link" href="#">Stellar</a></li>
+                        <li><a class="gtm-footer-link" href="#">Raga Power Pearls</a></li>
+                        <li><a class="gtm-footer-link" href="#">Nebula Jewels</a></li>
+                        <li><a class="gtm-footer-link" href="#">Grandmaster</a></li>
+                        <li><a class="gtm-footer-link" href="#">Maritime</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md active">
+                <div class="content-asset">
+                    <div>
+                        <h5 class="title d-none d-md-block" aria-expanded="true">CUSTOMER SERVICE</h5>
+                    </div>
+                    <ul class="content" id="collapsible-product">
+                        <li><a class="gtm-footer-link" href="#">Payment Options</a></li>
+                        <li><a class="gtm-footer-link" href="#">Track Order</a></li>
+                        <li><a class="gtm-footer-link" href="#" target="_blank">Encircle Program</a></li>
+                        <li><a class="gtm-footer-link" href="#">Find Titan World Stores</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md contact-us">
+                <div class="content-asset">
+                    <div>
+                        <h5 class="title d-none d-md-block">CONTACT US</h5>
+                    </div>
+                    <ul class="content" id="collapsible-company">
+                        <li><a class="gtm-footer-link" href="#">1800-266-0123</a></li>
+                        <li><a class="gtm-footer-link" href="#"
+                                style="text-transform:lowercase;">customercare@titan.co.in</a></li>
+                        <li><a class="gtm-footer-link" href="#">Help &amp; Contact</a></li>
+                        <li><a class="gtm-footer-link" href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md">
+                <div class="content-asset">
+                    <div>
+                        <h5 class="title d-none d-md-block">ABOUT TITAN</h5>
+                    </div>
+                    <ul class="content" id="collapsible-resources">
+                        <li><a class="gtm-footer-link" href="#">Brand Protection</a>
+                        </li>
+                        <li><a class="gtm-footer-link" href="#" target="_blank">Corporate</a>
+                        </li>
+                        <li><a class="gtm-footer-link" href="#" target="_blank">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-item col-12 col-xl-4 p-0">
+                <div class="footer-app-download">
+                    <div class="content-asset">
+                        <div class="download">
+                            <div class="download-text">
+                                <p>DOWNLOAD TITAN WORLD APP</p>
+                                <div class="download-app">
+                                    <a class="gtm-footer-link" href="#" target="_blank"><img
+                                            class="app-download appstore-img"
+                                            src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw435df752/images/footer/Group 15609.png"
+                                            alt="appstore"></a>
+                                    <a class="gtm-footer-link" href="#" target="_blank"><img class="app-download"
+                                            src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwac46a6ed/images/footer/Group 15610@2x.png"
+                                            alt="sdf"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-social-media">
+                    <div class="content-asset">
+                        <div class="download">
+                            <p class="section-header">FOLLOW US WITH</p>
+                            <div class="social-icons m-0"><a class="gtm-footer-link open-new-window" href="#"><img
+                                        alt="fb" class="social-fb"
+                                        src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw1803b970/images/footer/facebook.svg"></a>
+                                <a class="gtm-footer-link open-new-window" href="#"> <img alt="instagram"
+                                        class="social-insta"
+                                        src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw3c0d8bc6/images/footer/instagram.svg"></a>
+                                <a class="gtm-footer-link open-new-window" href="#"> <img alt="twitter"
+                                        class="social-twitter"
+                                        src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw812cf34d/images/footer/Footer-Twitter_White%20%281%29.svg"
+                                        title=""></a> <a class="gtm-footer-link open-new-window" href="#"> <img
+                                        alt="youtube" class="social-youtube"
+                                        src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwd1278123/images/footer/youtube.svg"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>© 2024 ExploreMore. All rights reserved|Designed By <span style="color: #e74c3c;">@SHIMRA NAAZ</span></p>
+              </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+    </body>
+
+</html>

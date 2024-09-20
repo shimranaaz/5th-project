@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABOUT US</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bona Nova SC", serif;
+  }
+
+  .watch {
+    background-image: linear-gradient(to right, #F7DBA7, #A0785A);
+    margin-bottom: 40px;
+    color: #fff;
+    padding: 4em;
+  }
+
+  .slider {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .slider img {
+    width: 30%;
+    border-radius: 25px;
+    display: inline-block;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+
+    25% {
+      transform: translateX(-100%);
+    }
+
+    50% {
+      transform: translateX(-200%);
+    }
+  }
+
+  .slider-inner {
+    display: inline-block;
+    white-space: nowrap;
+    animation: slide 20s linear infinite;
+  }
+
+  .footer-container {
+    background-color: black;
+    padding: 2em;
+    color: white;
+  }
+
+  .app-download {
+    width: 11em;
+  }
+
+  .content li {
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .gtm-footer-link {
+    text-decoration: none;
+    color: white;
+  }
+
+  .gtm-footer-link:hover {
+    text-decoration: underline;
+    color: white;
+  }
+
+  .title {
+    margin-left: 2em;
+    margin-bottom: 2em;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .col-md-7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .col-md-5 img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwb6d5816b/images/homepage/titan-logo.svg"
+          alt="Logo" style="width: 80%;">
+      </a>
+      <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto justify-content-end flex-grow-1 pe-3">
+          <form class="d-flex mt-3 mt-lg-0" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index1.html">Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index3.html">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index2.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Smartwatches
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item text-dark " href="index4.html">Shop by Feature</a></li>
+              <li><a class="dropdown-item text-dark" href="index4.html">Shop by Brands</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-dark" href="index4.html">Shop by Color</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="premiumWatchesDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Premium Watches
+            </a>
+            <div class="dropdown-menu" aria-labelledby="premiumWatchesDropdown">
+              <a class="dropdown-item text-dark" href="index5.html">Nebula</a>
+              <a class="dropdown-item text-dark" href="index5.html">Raga</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item text-dark" href="index5.html">Edge</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="internationalBrandsDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              International Brands
+            </a>
+            <div class="dropdown-menu" aria-labelledby="internationalBrandsDropdown">
+              <a class="dropdown-item text-dark" href="index6.html">Tommy Hilfiger</a>
+              <a class="dropdown-item text-dark" href="index6.html">Kenneth Cole</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item text-dark" href="index6.html">Annie Klevin</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index7.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="watch">
+    <div class="container">
+      <div class="row  my-5 g-4">
+        <div class="col-sm-6">
+          <div class="watch1">
+            <div class="card-body">
+              <img
+                src="https://img.freepik.com/premium-photo/closeup-designer-watch-businessman-hand-he-looks-time-hurrying_1203592-5.jpg?w=826"
+                class="d-block w-100" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="watch1">
+            <div class="card-body">
+              <img
+                src="https://img.freepik.com/premium-photo/photo-sleek-rose-gold-watch-model-s-wrist_933496-34009.jpg?w=826"
+                class="d-block w-100" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="shop by Feature">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">TITAN</h2>
+        <p class="lead">
+          Titan has come a long way since 1984 when we started with one product category. Today, with over 8,000
+          employees and about 38,000 in the overall Titan ecosystem, 16 brands and over 2,000 retail stores, we are as
+          committed as ever to delivering profitable and responsible growth for all our stakeholders</p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://www.titancompany.in/sites/default/files/tick%20tock.png" alt="">
+      </div>
+    </div>
+    <hr class="featurette-divider" id="Edge">
+    <div class="row featurette" id="shop by Color">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">FOSSIL WATCH</h2>
+        <p class="lead">Crafted with precision and attention to detail, our wrist watches for men offer a perfect blend
+          of style and functionality. From sleek and modern designs to classic and vintage-inspired timepieces, we have
+          something to suit every taste.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="https://cdn4.ethoswatches.com/the-watch-guide/wp-content/uploads/2018/08/Mobile-Mast-3.jpg" alt="">
+      </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">WATCHES & WEARABLES DIVISION</h2>
+        <p class="lead">Your search for perfectly crafted collections ends with Titan’s Watches and Wearables section.
+          As a category leader, Titan offers watches that tick with your every mood and occasion.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://www.titancompany.in/sites/default/files/younique.png" alt="">
+
+      </div>
+    </div>
+    <hr class="featurette-divider">
+  </div>
+  <div class="container head-title ">
+    <div class="subtitle_v1 text-center">
+      <h1> Our Team</h1>
+    </div>
+    <div class="container my-5">
+      <div class="slider">
+        <div class="slider-inner">
+          <img src="https://www.titancompany.in/sites/default/files/Suparna.png" alt="Slide 1">
+          <img src="https://www.titancompany.in/sites/default/files/MicrosoftTeams-image%20%2820%29.png" alt="Slide 2">
+          <img src="https://www.titancompany.in/sites/default/files/MicrosoftTeams-image%20%2813%29_1.png"
+            alt="Slide 3">
+          <img src="https://www.titancompany.in/sites/default/files/MicrosoftTeams-image%20%2818%29.png" alt="Slide 4">
+          <img src="https://www.titancompany.in/sites/default/files/Dinesh%20Shetty.jpg" alt="Slide 5">
+          <img src="https://www.titancompany.in/sites/default/files/MicrosoftTeams-image%20%2817%29.png" alt="Slide 1">
+          <img src="https://www.titancompany.in/sites/default/files/MicrosoftTeams-image%20%2819%29.png" alt="Slide 2">
+          <img src="https://www.titancompany.in/sites/default/files/Bhaskar%20BHat_1.jpg" alt="Slide 3">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxAJw3zWlTX7XqvXJos6wgaafcErbq8P1JXw&s"
+            alt="">
+          <img src="https://www.titancompany.in/sites/default/files/Mohanasankar%20Sivaprakasam_0.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-container row m-0">
+    <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md">
+      <div class="content-asset">
+        <div>
+          <h5 class="title d-none d-md-block">COLLECTIONS</h5>
+        </div>
+        <ul class="content" id="collapsible-product">
+          <li><a class="gtm-footer-link" href="#">Titan Automatics</a></li>
+          <li><a class="gtm-footer-link" href="#">Police Batman</a></li>
+          <li><a class="gtm-footer-link" href="#">Stellar</a></li>
+          <li><a class="gtm-footer-link" href="#">Raga Power Pearls</a></li>
+          <li><a class="gtm-footer-link" href="#">Nebula Jewels</a></li>
+          <li><a class="gtm-footer-link" href="#">Grandmaster</a></li>
+          <li><a class="gtm-footer-link" href="#">Maritime</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md active">
+      <div class="content-asset">
+        <div>
+          <h5 class="title d-none d-md-block" aria-expanded="true">CUSTOMER SERVICE</h5>
+        </div>
+        <ul class="content" id="collapsible-product">
+          <li><a class="gtm-footer-link" href="#">Payment Options</a></li>
+          <li><a class="gtm-footer-link" href="#">Track Order</a></li>
+          <li><a class="gtm-footer-link" href="#" target="_blank">Encircle Program</a></li>
+          <li><a class="gtm-footer-link" href="#">Find Titan World Stores</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md contact-us">
+      <div class="content-asset">
+        <div>
+          <h5 class="title d-none d-md-block">CONTACT US</h5>
+        </div>
+        <ul class="content" id="collapsible-company">
+          <li><a class="gtm-footer-link" href="#">1800-266-0123</a></li>
+          <li><a class="gtm-footer-link" href="#" style="text-transform:lowercase;">customercare@titan.co.in</a></li>
+          <li><a class="gtm-footer-link" href="#">Help &amp; Contact</a></li>
+          <li><a class="gtm-footer-link" href="#">FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md">
+      <div class="content-asset">
+        <div>
+          <h5 class="title d-none d-md-block">ABOUT TITAN</h5>
+        </div>
+        <ul class="content" id="collapsible-resources">
+          <li><a class="gtm-footer-link" href="#">Brand Protection</a>
+          </li>
+          <li><a class="gtm-footer-link" href="#" target="_blank">Corporate</a>
+          </li>
+          <li><a class="gtm-footer-link" href="#" target="_blank">Careers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-item col-12 col-xl-4 p-0">
+      <div class="footer-app-download">
+        <div class="content-asset">
+          <div class="download">
+            <div class="download-text">
+              <p>DOWNLOAD TITAN WORLD APP</p>
+              <div class="download-app">
+                <a class="gtm-footer-link" href="#" target="_blank"><img class="app-download appstore-img"
+                    src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw435df752/images/footer/Group 15609.png"
+                    alt="appstore"></a>
+                <a class="gtm-footer-link" href="#" target="_blank"><img class="app-download"
+                    src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwac46a6ed/images/footer/Group 15610@2x.png"
+                    alt="sdf"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-social-media">
+        <div class="content-asset">
+          <div class="download">
+            <p class="section-header">FOLLOW US WITH</p>
+            <div class="social-icons m-0"><a class="gtm-footer-link open-new-window" href="#"><img alt="fb"
+                  class="social-fb"
+                  src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw1803b970/images/footer/facebook.svg"></a>
+              <a class="gtm-footer-link open-new-window" href="#"> <img alt="instagram" class="social-insta"
+                  src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw3c0d8bc6/images/footer/instagram.svg"></a>
+              <a class="gtm-footer-link open-new-window" href="#"> <img alt="twitter" class="social-twitter"
+                  src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw812cf34d/images/footer/Footer-Twitter_White%20%281%29.svg"
+                  title=""></a> <a class="gtm-footer-link open-new-window" href="#"> <img alt="youtube"
+                  class="social-youtube"
+                  src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwd1278123/images/footer/youtube.svg"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>© 2024 ExploreMore. All rights reserved|Designed By <span style="color: #e74c3c;">@SHIMRA NAAZ</span></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

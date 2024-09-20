@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TITAN WATCHES</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Bona Nova SC", serif;
+    }
+
+    .slider {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    .slider img {
+      width: 30%;
+      display: inline-block;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-100%);
+      }
+
+      50% {
+        transform: translateX(-200%);
+      }
+    }
+
+    .slider-inner {
+      display: inline-block;
+      white-space: nowrap;
+      animation: slide 20s linear infinite;
+    }
+    .book-main {
+      position: relative;
+     display: flex;
+    }
+    .book {
+      width: 20em;
+      height: 300px;
+      display: inline-block;
+      margin: auto;
+      background-color: white;
+      transform-style: preserve-3d;
+      box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.2), 0 20px 50px rgba(0, 0, 0, 0.2);
+      transition: 1s;
+    }
+
+    .book:hover {
+      box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5), 0 10px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .book::before {
+      content: " ";
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: black;
+      transform-origin: bottom;
+      transform: skewX(-45deg);
+    }
+
+    .book::after {
+      content: " ";
+      position: absolute;
+      right: -5px;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background-color: rgb(39, 34, 34);
+      transform-origin: bottom;
+      transform: skewY(-45deg);
+    }
+
+    .imgbox img {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      z-index: 9999;
+    }
+
+    .book .imgbox {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-origin: left;
+      box-shadow: 10px 10px 20px gray;
+      transition: 1s;
+      z-index: 9999;
+    }
+
+    .book:hover .imgbox {
+      transform: rotateY(-135deg);
+    }
+
+    .book .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -99;
+      padding: 30px;
+    }
+   
+    .product-card {
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .product-image {
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product-image .icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    .product-details {
+      padding: 15px;
+    }
+
+    .product-details .rating {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-details .rating .star {
+      color: #f39c12;
+      margin-right: 5px;
+    }
+
+    .product-details .price {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-details .price .old-price {
+      text-decoration: line-through;
+      margin-right: 10px;
+      color: #888;
+    }
+
+    .product-details .price .discount {
+      color: #e74c3c;
+      margin-left: auto;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      position: absolute;
+      content: " ";
+      width: 80%;
+      height: 220%;
+      background-color: rgba(0, 0, 0, 0.7);
+      top: -50%;
+      left: -100%;
+      z-index: 1;
+      transform: rotate(25deg);
+      transform-origin: center top 0;
+      transition: .5s;
+    }
+
+    .card:hover::before {
+      left: -10%;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-text {
+      width: 100%;
+      padding: 0 20px;
+      position: absolute;
+      top: -100%;
+      color: #fff;
+      left: 0;
+      z-index: 2;
+      transition: 1.1s;
+    }
+
+    .card:hover .card-text {
+      top: 80px;
+    }
+
+    .testimonial-card {
+      position: relative;
+      width: 90%;
+      padding: 20px;
+      box-shadow: 10px 10px 20px gray;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      text-align: center;
+      background-color: #fff;
+      margin: 10px;
+    }
+
+    .testimonial-card img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+    }
+
+    .testimonial-card input[type="checkbox"] {
+      display: none;
+    }
+
+    .testimonial-card .toggle-label {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: black;
+      color: #fff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .testimonial-card .toggle-label::before {
+      content: "+";
+      font-size: 20px;
+    }
+
+    .testimonial-card input[type="checkbox"]:checked~.toggle-label::before {
+      content: "-";
+    }
+
+    .testimonial-card .message {
+      display: none;
+      margin-top: 20px;
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .testimonial-card input[type="checkbox"]:checked~.message {
+      display: block;
+    }
+
+    .parallax {
+      height: 500px;
+      background-image: url(/background.avif);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .content1 {
+      padding: 60px 0;
+      background: linear-gradient(-45deg, #A75502, salmon, #db8e28, #A0825A);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: white;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .watch {
+      box-shadow: 10px 10px 20px gray;
+    }
+
+    .footer-container {
+      background-color: black;
+      padding: 2em;
+      color: white;
+    }
+
+    .app-download {
+      width: 11em;
+    }
+
+    .content li {
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .gtm-footer-link {
+      text-decoration: none;
+      color: white;
+    }
+
+    .gtm-footer-link:hover {
+      text-decoration: underline;
+      color: white;
+    }
+
+    .title {
+      margin-left: 2em;
+      margin-bottom: 2em;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+    .g-4, .gy-4 {
+    --bs-gutter-y: 2.5rem;
+}
+@media only screen and (max-width:768px){
+  .imgbox img{
+        width: 14em;
+        height: 28vh;
+  }
+  .book{
+    width: 14em;
+    height: 28vh;
+  }
+  .book .content{
+    padding: 17px;
+    font-size: 13px;
+  }
+   .card::before{
+    width: 100%;
+   }
+}
+@media only screen and (max-width:412px){
+      .imgbox img{
+        width: 18em;
+        height: 35vh;
+  }
+  .book{
+    width: 18em;
+    height: 35vh;
+  }
+  .card::before{
+    width: 80%;
+   }
+    }
+  </style>
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwb6d5816b/images/homepage/titan-logo.svg"
+          alt="Logo" style="width: 80%;">
+      </a>
+      <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto justify-content-end flex-grow-1 pe-3">
+          <form class="d-flex mt-3 mt-lg-0" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index1.html">Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index3.html">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index2.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Smartwatches
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item text-dark " href="index4.html">Shop by Feature</a></li>
+              <li><a class="dropdown-item text-dark" href="index4.html">Shop by Brands</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-dark" href="index4.html">Shop by Color</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="premiumWatchesDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Premium Watches
+            </a>
+            <div class="dropdown-menu" aria-labelledby="premiumWatchesDropdown">
+              <a class="dropdown-item text-dark" href="index5.html">Nebula</a>
+              <a class="dropdown-item text-dark" href="index5.html">Raga</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item text-dark" href="index5.html">Edge</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="internationalBrandsDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              International Brands
+            </a>
+            <div class="dropdown-menu" aria-labelledby="internationalBrandsDropdown">
+              <a class="dropdown-item text-dark" href="index6.html">Tommy Hilfiger</a>
+              <a class="dropdown-item text-dark" href="index6.html">Kenneth Cole</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item text-dark" href="index6.html">Annie Klevin</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index7.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner my-5">
+      <div class="carousel-item active">
+        <img src="RagaNew.webp" class="d-block w-100 h-auto" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="BestSellers.webp" class="d-block w-100 h-auto" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="watch2.webp" class="d-block w-100 h-auto" alt="...">
+      </div>
+      <div class="carousel-item active">
+        <img src="watch3.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item active">
+        <img src="watch4.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item active">
+        <img src="New_arrivals.webp" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container">
+    <div class="row  my-5 g-4">
+      <div class="col-sm-6">
+        <div class="watch1">
+          <div class="card-body">
+            <img
+              src="https://img.freepik.com/premium-photo/closeup-designer-watch-businessman-hand-he-looks-time-hurrying_1203592-5.jpg?w=826"
+              class="d-block w-100" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="watch1">
+          <div class="card-body">
+            <img
+              src="https://img.freepik.com/premium-photo/photo-sleek-rose-gold-watch-model-s-wrist_933496-34009.jpg?w=826"
+              class="d-block w-100" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1 class="tw-category-carousel__heading text-center my-5" style="font-size: 30px;">THE BEST WAY TO BUY THE PRODUCTS
+    YOU LOVE</h1>
+  <div class="container mt-5">
+    <div class="slider">
+      <div class="slider-inner">
+        <img src="kids-removebg-preview.png" alt="Slide 1">
+        <img src="men_-removebg-preview.png" alt="Slide 2">
+        <img src="women-removebg-preview.png" alt="Slide 3">
+        <img src="couple-removebg-preview.png" alt="Slide 4">
+        <img src="luxe-removebg-preview.png" alt="Slide 5">
+        <img src="clock-removebg-preview.png" alt="Slide 1">
+        <img src="sale_-removebg-preview (1).png" alt="Slide 2">
+        <img src="smart-1-removebg-preview.png" alt="Slide 3">
+        <img
+          src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwff30f749/images/ragaB.jpg"
+          alt="Slide 2">
+        <img src="luxe-removebg-preview.png" alt="Slide 3">
+      </div>
+    </div>
+  </div>
+  <h1 class="tw-category-carousel__heading text-center my-5" style="font-size: 2em;">TOP BRANDS</h1>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6">
+        <div class="book-main">
+            <div class="book">
+              <div class="imgbox">
+                <img src="menwatch4.jpg">
+              </div>
+              <div class="content">
+                <h1 style="text-align: center; font-weight: bold;">TITAN</h1>
+                <div class="product-details">
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span>4.3 (304)</span>
+                  </div>
+                  <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                  <h5>Titan Neo Splash Quartz Multifunction Black Dial</h5>
+                  <p>Men's Watch</p>
+                  <div class="price">
+                    <span class="new-price">₹ 5,875</span>
+                    <span class="old-price">₹ 7,345</span>
+                    <span class="discount">20% off</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="book-main">
+            <div class="book">
+              <div class="imgbox">
+                <img src="menwatch.jpg">
+              </div>
+              <div class="content">
+                <h1 style="text-align: center; font-weight: bold;">ROLEX</h1>
+                <div class="product-details">
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span>4.3 (304)</span>
+                  </div>
+                  <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                  <h5>Rolex Splash Quartz Multifunction Black Dial</h5>
+                  <p>Men's Watch</p>
+                  <div class="price">
+                    <span class="new-price">₹ 5,875</span>
+                    <span class="old-price">₹ 7,345</span>
+                    <span class="discount">20% off</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="book-main">
+            <div class="book">
+              <div class="imgbox">
+                <img src="https://i.pinimg.com/564x/75/f2/3f/75f23f63f84216d7ee7b771f4266d602.jpg">
+              </div>
+              <div class="content">
+                <h1 style="text-align: center; font-weight: bold;">SONATA</h1>
+                <div class="product-details">
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span>4.3 (304)</span>
+                  </div>
+                  <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                  <h5>Sonata Splash Quartz Multifunction Black Dial</h5>
+                  <p>Men's Watch</p>
+                  <div class="price">
+                    <span class="new-price">₹ 5,875</span>
+                    <span class="old-price">₹ 7,345</span>
+                    <span class="discount">20% off</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="book-main">
+            <div class="book">
+              <div class="imgbox">
+                <img src="https://i.pinimg.com/564x/3a/32/fc/3a32fca62e7a8f32cdbf2c3c29bd9efe.jpg">
+              </div>
+              <div class="content">
+                <h1 style="text-align: center; font-weight: bold;">EDGE</h1>
+                <div class="product-details">
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span>4.3 (304)</span>
+                  </div>
+                  <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                  <h5>Edge Splash Quartz Multifunction Black Dial</h5>
+                  <p>Women's Watch</p>
+                  <div class="price">
+                    <span class="new-price">₹ 5,875</span>
+                    <span class="old-price">₹ 7,345</span>
+                    <span class="discount">20% off</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="book-main">
+            <div class="book">
+              <div class="imgbox">
+                <img src="women5.jpg">
+              </div>
+              <div class="content">
+                <h1 style="text-align: center; font-weight: bold;">RAGA</h1>
+                <div class="product-details">
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span>4.3 (304)</span>
+                  </div>
+                  <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                  <h5>Raga Splash Quartz Multifunction Black Dial</h5>
+                  <p>Women's Watch</p>
+                  <div class="price">
+                    <span class="new-price">₹ 5,875</span>
+                    <span class="old-price">₹ 7,345</span>
+                    <span class="discount">20% off</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="book-main">
+            <div class="book">
+              <div class="imgbox">
+                <img src="https://i.pinimg.com/564x/ae/9a/31/ae9a312dd18f814d6c92235d81eeb18e.jpg" alt="Description of the image">
+              </div>
+              <div class="content">
+                <h1 style="text-align: center; font-weight: bold;">TITAN</h1>
+                <div class="product-details">
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span>4.3 (304)</span>
+                  </div>
+                  <h6 class="text-uppercase text-muted mb-1">Best Seller</h6>
+                  <h5>Titan Neo Splash Quartz Multifunction Black Dial</h5>
+                  <p>Women's Watch</p>
+                  <div class="price">
+                    <span class="new-price">₹ 5,875</span>
+                    <span class="old-price">₹ 7,345</span>
+                    <span class="discount">20% off</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <h1 class="tw-category-carousel__heading text-center my-5" style="font-size: 2em;">BEST SALES!</h1>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="img7.webp" alt="">
+          <div class="card-text">
+            <h3>Titan</h3>
+            <h5>watch</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="https://i.pinimg.com/564x/2c/cf/ab/2ccfab232f0e0e68ccf3b098e1b88d6f.jpg" alt="">
+          <div class="card-text">
+            <h3>Raga</h3>
+            <h5>watch</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="img11.jpg" alt="">
+          <div class="card-text">
+            <h3>Sonata</h3>
+            <h5>watch</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="img14.jpg" alt="">
+          <div class="card-text">
+            <h3>COACH</h3>
+            <h5>watch</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="img5.webp" alt="">
+          <div class="card-text">
+            <h3>OMEGA</h3>
+            <h5>watch</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="https://i.pinimg.com/564x/79/ae/29/79ae29f5421b43c0216d3ca026602af1.jpg" alt="">
+          <div class="card-text">
+            <h3>EDGE</h3>
+            <h5>watch</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="tw-category-carousel__heading text-center my-5" id="men" style="font-size: 2em;">MEN</h3>
+  <div class="container" id="Men">
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="menwatch.jpg" alt="">
+          <div class="card-text">
+            <h3>Titan</h3>
+            <h5>watch</h5>
+            <h6>₹ 5,875</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="menwatch1.jpg" alt="">
+          <div class="card-text">
+            <h3>Raga</h3>
+            <h5>watch</h5>
+            <h6>₹ 5,675</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="menwatch2.jpg" alt="">
+          <div class="card-text">
+            <h3>Sonata</h3>
+            <h5>watch</h5>
+            <h6>₹ 4,875</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="img14.jpg" alt="">
+          <div class="card-text">
+            <h3>COACH</h3>
+            <h5>watch</h5>
+            <h6>₹ 5,775</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="menwatch3.jpg" alt="">
+          <div class="card-text">
+            <h3>OMEGA</h3>
+            <h5>watch</h5>
+            <h6>₹ 4,875</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="menwatch4.jpg" alt="">
+          <div class="card-text">
+            <h3>EDGE</h3>
+            <h5>watch</h5>
+            <h6>₹ 3,875</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="tw-category-carousel__heading text-center my-5" style="font-size: 2em;" id="women">WOMEN</h3>
+  <div class="container" id="women">
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="women.jpg" alt="">
+          <div class="card-text">
+            <h3>Titan</h3>
+            <h5>watch</h5>
+            <h6>₹ 5,275</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="color2.jpg" alt="">
+          <div class="card-text">
+            <h3>Rebirth</h3>
+            <h5>watch</h5>
+            <h6>₹ 1,875</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="color1.jpg" alt="">
+          <div class="card-text">
+            <h3>Raga</h3>
+            <h5>watch</h5>
+            <h6>₹ 3,875</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="women7.jpg" alt="">
+          <div class="card-text">
+            <h3>COACH</h3>
+            <h5>watch</h5>
+            <h6>₹ 2,875</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="women5.jpg" alt="">
+          <div class="card-text">
+            <h3>OMEGA</h3>
+            <h5>watch</h5>
+            <h6>₹ 3,875</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="women6.jpg" alt="">
+          <div class="card-text">
+            <h3>EDGE</h3>
+            <h5>watch</h5>
+            <h6>₹ 5,375</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="tw-category-carousel__heading text-center my-5" id="men" style="font-size: 2em;">OUR CLIENTS</h3>
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <img src="girl image.png" alt="Evelyn H.">
+          <h4>Evelyn H.</h4>
+          <p>Designer</p>
+          <input type="checkbox" id="toggle1">
+          <label for="toggle1" class="toggle-label"></label>
+          <div class="message">
+            <p>Evelyn Ha is known and famous for being an American, TikToker, model, and social media personality.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <img src="girl image2.png" alt="John D.">
+          <h4>Lavinia</h4>
+          <p>Founder & CEO</p>
+          <input type="checkbox" id="toggle2">
+          <label for="toggle2" class="toggle-label"></label>
+          <div class="message">
+            <p>The legend is the story of Lavina, how she fervently held the attention, and captured the heart of a
+              distinguished British Governor of Ceylon.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <img src="girl image3.png" alt="Alice W.">
+          <h4>Analisse Shire</h4>
+          <p>Sales Specialist</p>
+          <input type="checkbox" id="toggle3">
+          <label for="toggle3" class="toggle-label"></label>
+          <div class="message">
+            <p>Analisse Shire. Sales Specialist. Speak with a dermatologist today. We have a specialist ready to help
+              you with any answer and advice you need. Get in Touch ..</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="parallax">
+  </section>
+  <section class="content1">
+    <div class="container">
+      <h2>RAGA WATCHES</h2>
+      <p>Titan's Raga Watch Collection is Embellished with Intricate Carvings and Precious Gems.</p>
+    </div>
+  </section>
+  <section class="parallax">
+  </section>
+  <div class="footer-container row m-0 mt-5">
+    <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md">
+      <div class="content-asset">
+        <div>
+          <h5 class="title d-none d-md-block">COLLECTIONS</h5>
+        </div>
+        <ul class="content" id="collapsible-product">
+          <li><a class="gtm-footer-link" href="#">Titan Automatics</a></li>
+          <li><a class="gtm-footer-link" href="#">Police Batman</a></li>
+          <li><a class="gtm-footer-link" href="#">Stellar</a></li>
+          <li><a class="gtm-footer-link" href="#">Raga Power Pearls</a></li>
+          <li><a class="gtm-footer-link" href="#">Nebula Jewels</a></li>
+          <li><a class="gtm-footer-link" href="#">Grandmaster</a></li>
+          <li><a class="gtm-footer-link" href="#">Maritime</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md active">
+      <div class="content-asset">
+        <div>
+          <h5 class="title d-none d-md-block" aria-expanded="true">CUSTOMER SERVICE</h5>
+        </div>
+        <ul class="content" id="collapsible-product">
+          <li><a class="gtm-footer-link" href="#">Payment Options</a></li>
+          <li><a class="gtm-footer-link" href="#">Track Order</a></li>
+          <li><a class="gtm-footer-link" href="#" target="_blank">Encircle Program</a></li>
+          <li><a class="gtm-footer-link" href="#">Find Titan World Stores</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md contact-us">
+      <div class="content-asset">
+        <div>
+          <h5 class="title d-none d-md-block">CONTACT US</h5>
+        </div>
+        <ul class="content" id="collapsible-company">
+          <li><a class="gtm-footer-link" href="#">1800-266-0123</a></li>
+          <li><a class="gtm-footer-link" href="#" style="text-transform:lowercase;">customercare@titan.co.in</a></li>
+          <li><a class="gtm-footer-link" href="#">Help &amp; Contact</a></li>
+          <li><a class="gtm-footer-link" href="#">FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-item col-12 col-md-6 col-lg-6 col-xl-2 p-0 collapsible-md">
+      <div class="content-asset">
+        <div>
+          <h5 class="title d-none d-md-block">ABOUT TITAN</h5>
+        </div>
+        <ul class="content" id="collapsible-resources">
+          <li><a class="gtm-footer-link" href="#">Brand Protection</a>
+          </li>
+          <li><a class="gtm-footer-link" href="#" target="_blank">Corporate</a>
+          </li>
+          <li><a class="gtm-footer-link" href="#" target="_blank">Careers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-item col-12 col-xl-4 p-0">
+      <div class="footer-app-download">
+        <div class="content-asset">
+          <div class="download">
+            <div class="download-text">
+              <p>DOWNLOAD TITAN WORLD APP</p>
+              <div class="download-app">
+                <a class="gtm-footer-link" href="#" target="_blank"><img class="app-download appstore-img"
+                    src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw435df752/images/footer/Group 15609.png"
+                    alt="appstore"></a>
+                <a class="gtm-footer-link" href="#" target="_blank"><img class="app-download"
+                    src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwac46a6ed/images/footer/Group 15610@2x.png"
+                    alt="sdf"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-social-media">
+        <div class="content-asset">
+          <div class="download">
+            <p class="section-header">FOLLOW US WITH</p>
+            <div class="social-icons m-0"><a class="gtm-footer-link open-new-window" href="#"><img alt="fb"
+                  class="social-fb"
+                  src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw1803b970/images/footer/facebook.svg"></a>
+              <a class="gtm-footer-link open-new-window" href="#"> <img alt="instagram" class="social-insta"
+                  src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw3c0d8bc6/images/footer/instagram.svg"></a>
+              <a class="gtm-footer-link open-new-window" href="#"> <img alt="twitter" class="social-twitter"
+                  src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw812cf34d/images/footer/Footer-Twitter_White%20%281%29.svg"
+                  title=""></a> <a class="gtm-footer-link open-new-window" href="#"> <img alt="youtube"
+                  class="social-youtube"
+                  src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwd1278123/images/footer/youtube.svg"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>© 2024 ExploreMore. All rights reserved|Designed By <span style="color: #e74c3c;">@SHIMRA NAAZ</span></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
